@@ -1,4 +1,4 @@
-# 🚀 Crehana Challenge – Todo List API
+# Crehana Challenge – Todo List API
 
 ## 📜 Description
 
@@ -75,7 +75,7 @@ This command runs all tests using `pytest` inside the Docker container.
 
 ```
 .
-├── docker/                  # Docker & environment setup
+├── docker/                  # Docker & 
 │   ├── docker-compose.yml
 │   └── .env_template
 ├── src/                     # Application source code
@@ -83,8 +83,8 @@ This command runs all tests using `pytest` inside the Docker container.
 │   ├── tasks/
 │   └── core/
 |   |__ tests/               # Unit tests
-├── Makefile                 # Useful dev commands
-└── README.md                # Project documentation
+├── Makefile                 # commands
+└── README.md                
 ```
 
 ---
@@ -92,7 +92,6 @@ This command runs all tests using `pytest` inside the Docker container.
 ## ✅ Notes
 
 - The app uses a **separate database for testing** (`crehana_test`) to avoid affecting real data.
-- All test-related logic is isolated in `src/tests/` and is executed inside the container.
 - The project uses a `Makefile` to simplify common development tasks.
 
 ---
