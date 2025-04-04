@@ -1,6 +1,5 @@
-from sqlmodel import Session, create_engine, SQLModel
+from sqlmodel import SQLModel, create_engine
 
-from src.tasks.models import Task
 from src.core.settings import settings
 
 engine = create_engine(str(settings.SQLALCHEMY_DATABASE_URI))

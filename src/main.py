@@ -1,11 +1,9 @@
 from logging import INFO, basicConfig, getLogger
-from typing import Union, AsyncGenerator
-from contextlib import asynccontextmanager
-from fastapi import FastAPI
-from src.tasks import routes as task_routes
-from src.core.db import create_db_and_tables
-from fastapi import APIRouter
 
+from fastapi import FastAPI
+
+from src.core.db import create_db_and_tables
+from src.tasks import routes as task_routes
 
 logger = getLogger(__name__)
 basicConfig(level=INFO)
@@ -20,7 +18,4 @@ def on_startup():
     logger.info("Finished shutting down.")
 
 
-
 app.include_router(task_routes.router)
-
-

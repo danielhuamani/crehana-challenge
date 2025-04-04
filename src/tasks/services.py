@@ -1,5 +1,4 @@
 from src.tasks.repositories import TaskRepository
-from src.core.session import SessionDep
 from src.tasks.schemas import TaskCreateBody, TaskResponse, TaskUpdateBody
 
 
@@ -10,20 +9,15 @@ class TaskService:
 
     def get_all(self):
         return self.repository.get_all()
-    
+
     def create(self, task: TaskCreateBody) -> TaskResponse:
         return self.repository.create(task=task)
-    
+
     def get_by_id(self, id: int):
         return self.repository.get_by_id(id)
-    
+
     def update(self, id: int, task: TaskUpdateBody) -> TaskResponse:
-        return self.repository.update(
-            id=id,
-            task=task
-        )
-    
+        return self.repository.update(id=id, task=task)
+
     def delete(self, id: int) -> None:
-        return self.repository.delete(
-            id=id
-        )
+        return self.repository.delete(id=id)

@@ -1,10 +1,6 @@
-from fastapi import FastAPI
+from pydantic import PostgresDsn, computed_field
 from pydantic_settings import BaseSettings
-from pydantic_core import MultiHostUrl
-from pydantic import (
-    PostgresDsn,
-    computed_field,
-)
+
 
 class Settings(BaseSettings):
     postgres_db: str
@@ -24,5 +20,6 @@ class Settings(BaseSettings):
             port=self.postgres_port,
             path=self.postgres_db,
         ).unicode_string()
+
 
 settings = Settings()

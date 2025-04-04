@@ -6,8 +6,7 @@ class TaskBase(BaseModel):
     description: str
 
 
-class TaskCreateBody(TaskBase):
-    ...
+class TaskCreateBody(TaskBase): ...
 
 
 class TaskUpdateBody(TaskBase):
