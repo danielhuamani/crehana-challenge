@@ -3,3 +3,4 @@ black @ git+https://github.com/psf/black@950ec38c119916868833cb9896dab324c5d8ead
 flake8==7.2.0
 isort==6.0.1
 flake8-isort==6.1.2
+pytest==8.3.5

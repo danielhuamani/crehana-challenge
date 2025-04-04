@@ -22,7 +22,7 @@ RUN mkdir /requirements
 COPY ./requirements ./requirements
 COPY ./setup.cfg ./setup.cfg
 RUN pip install -r ./requirements/local.txt
-COPY ./docker/docker-entrypoint.sh /docker-entrypoint.sh
+COPY ./docker/local/docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
 ENV PYTHONUNBUFFERED 1
