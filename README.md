@@ -1,44 +1,108 @@
-# Crehana challenge
+# 🚀 Crehana Challenge – Todo List API
 
-## Description
+## 📜 Description
 
-Crehana's todo list project for the challenge
+This project is a technical challenge for **Crehana**. It consists of a simple **Todo List API** built with **FastAPI** and containerized with **Docker**
 
-## Requirements
+---
 
-requirements to execute the project:
+## 📦 Requirements
 
-- `docker`
+To run this project, you must have the following installed:
 
-## Project installation
+- [Docker](https://www.docker.com/)
+
+---
+
+## ⚙️ Project Installation
+
+Follow these steps to set up the project locally:
 
 1. **Clone the repository**
    ```bash
-   git clone git@github.com:danielhuamani/crehana-challenge.git
+   git clone https://github.com/your-username/crehana-challenge.git
    cd crehana-challenge
-2. cd docker
-2. cp .env_template .env
-3. Execute command: make build
+   ```
 
-## Run
-===============
-- `make up`.
+2. **Navigate to the Docker folder**
+   ```bash
+   cd docker
+   ```
 
-The API will be available at: http://localhost:8000
+3. **Create the `.env` file from the template**
+   ```bash
+   cp .env_template .env
+   ```
 
-You can also access the Swagger documentation at:
-http://localhost:8000/docs
+4. **Build the Docker containers**
+   ```bash
+   make build
+   ```
 
-## Uni Test
--  Open new terminal
-- run `make docker-test`.
+---
 
+## ▶️ Run the Application
 
-## Technologies Used
-FastAPI – Web framework
+To start the application:
 
-SQLModel – ORM + data validation
+```bash
+make up
+```
 
-Docker & Docker Compose – Containerization
+The API will be available at: [http://localhost:8000](http://localhost:8000)
 
-Pytest – Testing framework
+You can also access the **Swagger documentation** at:  
+[http://localhost:8000/docs](http://localhost:8000/docs)
+
+---
+
+## Run Unit Tests
+
+To run the test suite:
+
+1. Open a new terminal window
+2. Run:
+
+   ```bash
+   make test
+   ```
+
+This command runs all tests using `pytest` inside the Docker container.
+
+---
+
+## 📁 Project Structure
+
+```
+.
+├── docker/                  # Docker & environment setup
+│   ├── docker-compose.yml
+│   └── .env_template
+├── src/                     # Application source code
+│   ├── main.py
+│   ├── tasks/
+│   └── core/
+|   |__ tests/               # Unit tests
+├── Makefile                 # Useful dev commands
+└── README.md                # Project documentation
+```
+
+---
+
+## ✅ Notes
+
+- The app uses a **separate database for testing** (`crehana_test`) to avoid affecting real data.
+- All test-related logic is isolated in `src/tests/` and is executed inside the container.
+- The project uses a `Makefile` to simplify common development tasks.
+
+---
+
+## 🛠️ Technologies Used
+
+- **FastAPI** – High-performance Python web framework
+- **SQLModel** – SQL + Pydantic + SQLAlchemy ORM
+- **Docker & Docker Compose** – Containerized environment
+- **Pytest** – Python testing framework
+- **Make** – Task runner for development
+
+---
